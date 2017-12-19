@@ -14,7 +14,6 @@ $(function()
   $('.btn-savenote').click(function()
   {
     localStorage.setItem('memo', $('#memo').val());
-    alert($('#memo').val() + "저장!");
   });
 
   // download Note
@@ -27,9 +26,17 @@ $(function()
   // about
   $('.btn-about').click(function()
   {
-    console.log("about button click");
     var display = $('.about').css("display");
     if(display=="none")  $('.about').css("display", 'block');
     else if(display=="block")  $('.about').css("display", 'none');
   });
+
+  // full screen
+  $('.btn-fullscreen').click(function()
+  {
+    console.log('fullscreen click');
+    if (screenfull.enabled) {
+      screenfull.request();
+    } 
+  })
 });
