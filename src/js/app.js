@@ -1,28 +1,31 @@
+console.log('my-note app.js');
+
 $(function()
 {
-  console.log('my-note app.js');
+  try {
+    $('#memo').val(localStorage.getItem('memo'));
+  } catch (e) {
 
-  var $btn_new = $('.btn-newnote');
-  var $btn_save = $('.btn-savenote');
-  var $btn_about = $('.btn-about');
-  var $ta_memo = $('#memo');
+  } finally {
 
-console.log($ta_memo);
+  }
+  // alert(localStorage.getItem('memo'));
+});
 
-  $btn_new.click(function()
-  {
-    $ta_memo.val("");
-    console.log("new button click");
-  });
+// new note
+$('.btn-newnote').click(function()
+{
+  $('#memo').val("");
+});
 
-  $btn_save.click(function()
-  {
-    alert("save button click");
-  });
+// save note
+$('.btn-savenote').click(function()
+{
+  localStorage.setItem('memo', $('#memo').val());
+  alert($('#memo').val() + "저장!");
+});
 
-  $btn_about.click(function()
-  {
-    alert("about button click");
-  });
-
+// about
+$('.btn-about').click(function()
+{
 });
