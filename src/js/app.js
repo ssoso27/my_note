@@ -2,30 +2,30 @@ console.log('my-note app.js');
 
 $(function()
 {
-  try {
-    $('#memo').val(localStorage.getItem('memo'));
-  } catch (e) {
+  $('#memo').val(localStorage.getItem('memo'));
 
-  } finally {
+  // new note
+  $('.btn-newnote').click(function()
+  {
+    $('#memo').val("");
+  });
 
-  }
-  // alert(localStorage.getItem('memo'));
-});
+  // save note
+  $('.btn-savenote').click(function()
+  {
+    localStorage.setItem('memo', $('#memo').val());
+    alert($('#memo').val() + "저장!");
+  });
 
-// new note
-$('.btn-newnote').click(function()
-{
-  $('#memo').val("");
-});
+  // download Note
+  $('.btn-downloadnote').click(function()
+  {
+    var blob = new Blob([$('#memo').val()], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "memo.txt");
+  });
 
-// save note
-$('.btn-savenote').click(function()
-{
-  localStorage.setItem('memo', $('#memo').val());
-  alert($('#memo').val() + "저장!");
-});
-
-// about
-$('.btn-about').click(function()
-{
+  // about
+  $('.btn-about').click(function()
+  {
+  });
 });
