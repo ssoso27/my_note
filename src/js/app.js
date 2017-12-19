@@ -5,11 +5,14 @@ $(function()
   var $btn_new = $('.btn-newnote');
   var $btn_save = $('.btn-savenote');
   var $btn_about = $('.btn-about');
-  var $ta_memo = $('#memo')[0];
+  var $ta_memo = $('#memo');
+
+console.log($ta_memo);
 
   $btn_new.click(function()
   {
-    alert("new button click");
+    $ta_memo.val("");
+    console.log("new button click");
   });
 
   $btn_save.click(function()
