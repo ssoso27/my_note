@@ -25,7 +25,6 @@ $(function()
   $('.btn-about').click(function()
   {
     var display = $('.about').css("display");
-    // changeDisplay(display);
     if(display=="none")  $('.about').css("display", 'block');
     else if(display=="block")  $('.about').css("display", 'none');
   });
